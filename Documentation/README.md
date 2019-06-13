@@ -87,7 +87,7 @@ Command_ColoringSurfaces(string scheme, Color color1, Color color2, bool onlyCol
 Ability to manipulate molecular entities
 
 ```csharp
-Workspace_GetNetwork() -> NetworkNode
+Workspace_GetNetwork() -> NetworkNode // EXPERT ONLY
 Workspace_GetComplexes() -> List<Complex>
 
 Workspace_GetCenter() -> Vector3
@@ -96,7 +96,9 @@ Workspace_GetScale() -> Vector3
 Workspace_SetCenter(Vector3 value) -> null
 Workspace_SetScale(Vector3 value) -> null
 
-Complex_GetNetwork(Complex complex) -> NetworkNode
+Complex_GetNetwork(Complex complex) -> NetworkNode // EXPERT ONLY
+Complex_GetMolecules(Complex complex) -> List<Molecule>
+Complex_GetCurrentMolecule(Complex complex) -> Molecule
 
 Complex_GetName(Complex complex) -> string
 Complex_GetTagNumber(Complex complex) -> int
@@ -132,21 +134,18 @@ Complex_SetGlobalRotation(Complex complex, Quaternion value) -> null
 Complex_SetLocalPosition(Complex complex, Vector3 value) -> null
 Complex_SetLocalRotation(Complex complex, Quaternion value) -> null
 
-Complex_GetMolecules(Complex complex) -> List<Molecule>
-Complex_GetCurrentMolecule(Complex complex) -> Molecule
-
-Molecule_GetNetwork(Molecule molecule) -> NetworkNode
+Molecule_GetNetwork(Molecule molecule) -> NetworkNode // EXPERT ONLY
 Molecule_GetComplex(Molecule molecule) -> Complex
 Molecule_GetChains(Molecule molecule) -> List<Chain>
 Molecule_GetName(Molecule molecule) -> string
 
-Chain_GetNetwork(Chain chain) -> NetworkNode
+Chain_GetNetwork(Chain chain) -> NetworkNode // EXPERT ONLY
 Chain_GetComplex(Chain chain) -> Complex
 Chain_GetMolecule(Chain chain) -> Molecule
 Chain_GetResidues(Chain chain) -> List<Residue>
 Chain_GetName(Chain chain) -> string
 
-Residue_GetNetwork(Residue residue) -> NetworkNode
+Residue_GetNetwork(Residue residue) -> NetworkNode // EXPERT ONLY
 Residue_GetComplex(Residue residue) -> Complex
 Residue_GetMolecule(Residue residue) -> Molecule
 Residue_GetChain(Residue residue) -> Chain
@@ -156,7 +155,7 @@ Residue_GetSerial(Residue residue) -> int
 Residue_GetLabelContent(Residue residue) -> string
 Residue_SetLabelContent(Residue residue, string value) -> null
 
-Atom_GetNetwork(Atom atom) -> NetworkNode
+Atom_GetNetwork(Atom atom) -> NetworkNode // EXPERT ONLY
 Atom_GetComplex(Atom atom) -> Complex
 Atom_GetMolecule(Atom atom) -> Molecule
 Atom_GetChain(Atom atom) -> Chain
@@ -181,7 +180,7 @@ Ability to manipulate the menus in the room
 Menu_FindByName(string name) -> Menu
 Menu_FindAll() -> List<Menu>
 
-Menu_GetNetwork(Menu menu) -> NetworkNode
+Menu_GetNetwork(Menu menu) -> NetworkNode // EXPERT ONLY
 Menu_GetName(Menu menu) -> string
 Menu_GetVisible(Menu menu) -> bool
 Menu_GetLocked(Menu menu) -> bool
