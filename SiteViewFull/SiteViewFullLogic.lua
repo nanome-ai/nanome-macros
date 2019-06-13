@@ -56,7 +56,7 @@ function main ()
 
     Command_ShowAtomsBonds(true);
     Command_ShowRibbons(true);
-    Command_ShowSurfaces(true);
+    Command_ShowSurfaces(false);
     Command_ShowWaters(true);
     Command_ShowHydrogens(true);
     Command_ShowHetAtomsBonds(true);
