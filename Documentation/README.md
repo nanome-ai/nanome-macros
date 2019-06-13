@@ -3,7 +3,7 @@
 
 # Selection fonctionality
 
-https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/SELECTION.md
+DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/SELECTION.md
 
 Ability to manipulate workspace selection
 
@@ -36,7 +36,7 @@ Selection_GetComplexes() -> List<Complex>
 
 # Command fonctionality
 
-https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/COMMAND.md
+DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/COMMAND.md
 
 Manipulate the workspace and the selection within the workspace
 
@@ -225,7 +225,7 @@ User_SetOriginRotation(User user, Quaternion value) -> null
 
 # Store fonctionality
 
-https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/STORE.md
+DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/STORE.md
 
 Ability to save values between macro runs
 
@@ -290,7 +290,7 @@ Time_Now() -> float
 
 # Network functionality
 
-https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/NETWORK.md
+DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/NETWORK.md
 
 EXPERT ONLY: Ability to directly edit the underlying state of the room
 
