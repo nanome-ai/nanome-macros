@@ -1,12 +1,9 @@
-# Links
-
-[API: Selection](https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/SELECTION.md)
-[API: Command](https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/COMMAND.md)
-[API: Store](https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/STORE.md)
 
 # Selection fonctionality
 
 Ability to manipulate workspace selection
+
+https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/SELECTION.md
 
 ```csharp
 Selection_All() -> null
@@ -38,6 +35,8 @@ Selection_GetComplexes() -> List<Complex>
 # Command fonctionality
 
 Manipulate the workspace and the selection within the workspace
+
+https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/COMMAND.md
 
 ```csharp
 Command_Load(string name, string type, string source, string payload) -> null
@@ -84,6 +83,8 @@ Command_ColoringSurfaces(string scheme, Color color1, Color color2, bool onlyCol
 # Store fonctionality
 
 Ability to save values between macro runs
+
+https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/STORE.md
 
 ```csharp
 Store_Set(string key, object value) -> null

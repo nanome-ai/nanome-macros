@@ -1,5 +1,5 @@
 
-## Available functions: Store
+# Available functions: Store
 
 ### Write store content
 
@@ -18,7 +18,7 @@
 * [Store_GetInt](#store_getint) (Get the int value of a specific key)
 * [Store_GetBool](#store_getbool) (Get the boolean value of a specific key)
 
-## Documentation API
+# Documentation API : Store
 
 ### Store_Set
 Definition

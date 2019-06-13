@@ -1,5 +1,7 @@
 
-## Available functions: Selection
+# Available functions: Selection
+
+### Set selection
 
 * [Selection_All](#selection_all) (Select EVERYTHING)
 * [Selection_Clear](#selection_clear) (Select NOTHING)
@@ -7,13 +9,16 @@
 * [Selection_Extend](#selection_extend) (Select all atoms at a certain distance from the current selection)
 * [Selection_Shrink](#selection_shrink) (Deselect all atoms that are at a certain distance from non-selected atoms)
 * [Selection_Change](#selection_change) (Arbitrary change of selection)
+
+### Read selection
+
 * [Selection_GetAtoms](#selection_getatoms) (Get all selected atoms in a list)
 * [Selection_GetResidues](#selection_getresidues) (Get all selected residues in a list)
 * [Selection_GetChains](#selection_getchains) (Get all selected chains in a list)
 * [Selection_GetMolecules](#selection_getmolecules) (Get all selected molecules in a list)
 * [Selection_GetComplexes](#selection_getcomplexes) (Get all selected complexes in a list)
 
-## Documentation API
+# Documentation API : Selection
 
 ### Selection_All
 Definition

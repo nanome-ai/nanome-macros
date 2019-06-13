@@ -1,11 +1,12 @@
 
-## Available functions: Command
+# Available functions: Command
 
 ### Utility functions
-
-* [Command_Load](#command_load) (Load an arbitrary molecule/map/ligand from any available source)
 * [Command_Notification](#command_notification) (Display a message to the user)
 * [Command_Wait](#command_wait) (Pause macro execution for a set time)
+
+### Manipulate entities
+* [Command_Load](#command_load) (Load an arbitrary molecule/map/ligand from any available source)
 * [Command_Split](#command_split) (Split selected atoms into different molecular complexes)
 * [Command_Duplicate](#command_duplicate) (Duplicate selected atoms into new molecular complexes)
 * [Command_Merge](#command_merge) (Merge selected atoms into a single molecular complex)
@@ -13,6 +14,8 @@
 * [Command_Zoom](#command_zoom) (Bring selected atoms into arms-length distance in front of the user)
 * [Command_Align](#command_align) (Align molecular complexes origins and lock them into place)
 * [Command_Delete](#command_delete) (Destroy and remove molecular structures from the room)
+
+### Rendering options
 * [Command_ShowAtomsBonds](#command_showatomsbonds) (Enable/Disable rendering of atoms and bonds)
 * [Command_ShowRibbons](#command_showribbons) (Enable/Disable rendering of ribbons)
 * [Command_ShowSurfaces](#command_showsurfaces) (Enable/Disable rendering of surface)
@@ -28,11 +31,13 @@
 * [Command_ColoringSurfaces](#command_coloringsurfaces) (Set coloring of selected atom surfaces)
 * [Command_ShowAtomLabels](#command_showatomlabels) (Enable/Disable rendering of selected atoms labels)
 * [Command_ShowResidueLabels](#command_showresiduelabels) (Enable/Disable rendering of selected residues labels)
+
+### Misc functions
 * [Command_HydrogenAdd](#command_hydrogenadd) (Schedule computing of hydrogens on selected atoms, SLOW)
 * [Command_HydrogenDelete](#command_hydrogendelete) (Schedule removing of hydrogens on selected atoms, SLOW)
 * [Command_Flush](#command_flush) (Make sure all previous commands have been executed before continuing)
 
-## Documentation API
+# Documentation API : Command
 
 ### Command_Load
 Definition
