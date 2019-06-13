@@ -1,0 +1,3 @@
+
+This macro will highlight all the ligands in the scene at once
+
