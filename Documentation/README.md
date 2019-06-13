@@ -230,6 +230,8 @@ Ability to manipulate the user in the room
 ```csharp
 User_GetMain() -> User
 
+User_GetNetwork(User user) -> Vector3
+
 User_GetEyesForward(User user) -> Vector3
 User_GetEyesPosition(User user) -> Vector3
 User_GetEyesRotation(User user) -> Quaternion
@@ -323,6 +325,7 @@ EXPERT ONLY: Ability to directly edit the underlying state of the room
 
 ```csharp
 Network_Root() -> NetworkNode
+
 Network_GetType(NetworkNode node) -> string
 Network_GetParent(NetworkNode node) -> NetworkNode
 Network_GetChildren(NetworkNode node) -> List<NetworkNode>
@@ -339,6 +342,7 @@ Network_GetProperty(NetworkNode node, string property) -> object
 
 Network_Make(NetworkNode parent, string type, object payload) -> NetworkNode
 Network_Delete(NetworkNode node) -> null
+
 Network_SetPropertyBool(NetworkNode node, string property, bool value) -> null
 Network_SetPropertyByte(NetworkNode node, string property, int value) -> null
 Network_SetPropertyInt(NetworkNode node, string property, int value) -> null
