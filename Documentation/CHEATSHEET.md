@@ -22,8 +22,8 @@ Selection_Change(string mode, List<Chain> chains) -> null
 Selection_Change(string mode, List<Molecule> molecules) -> null
 Selection_Change(string mode, List<Complex> complexes) -> null
 
-Selection_Extend(float distance, bool groupResidues) -> null
-Selection_Shrink(float distance, bool groupResidues) -> null
+Selection_Extend(float distance, bool byResidues) -> null
+Selection_Shrink(float distance, bool byResidues) -> null
 
 Selection_GetAtoms() -> List<Atom>
 Selection_GetResidues() -> List<Residue>
@@ -151,6 +151,8 @@ Residue_GetChain(Residue residue) -> Chain
 Residue_GetAtoms(Residue residue) -> List<Atom>
 Residue_GetName(Residue residue) -> string
 Residue_GetSerial(Residue residue) -> int
+Residue_GetLabelContent(Residue residue) -> string
+Residue_SetLabelContent(Residue residue, string value) -> null
 
 Atom_GetNetwork(Atom atom) -> NetworkNode
 Atom_GetComplex(Atom atom) -> Complex
@@ -162,8 +164,11 @@ Atom_GetName(Atom atom) -> string
 Atom_GetSerial(Atom atom) -> int
 Atom_GetPosition(Atom atom) -> Vector3
 Atom_GetSelected(Atom atom) -> bool
+Atom_GetLabeled(Atom atom) -> bool
 Atom_GetIsHet(Atom atom) -> bool
 Atom_GetBFactor(Atom atom) -> float
+Atom_GetLabelContent(Atom atom) -> string
+Atom_SetLabelContent(Atom atom, string value) -> null
 ```
 
 # Menu fonctionality
@@ -199,6 +204,14 @@ User_GetMain() -> User
 User_GetEyesForward(User user) -> Vector3
 User_GetEyesPosition(User user) -> Vector3
 User_GetEyesRotation(User user) -> Quaternion
+
+User_GetLeftHandForward(User user) -> Vector3
+User_GetLeftHandPosition(User user) -> Vector3
+User_GetLeftHandRotation(User user) -> Quaternion
+
+User_GetRightHandForward(User user) -> Vector3
+User_GetRightHandPosition(User user) -> Vector3
+User_GetRightHandRotation(User user) -> Quaternion
 
 User_GetOriginForward(User user) -> Vector3
 User_GetOriginPosition(User user) -> Vector3
