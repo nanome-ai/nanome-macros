@@ -3,12 +3,9 @@
 
 ### Utility functions
 
+* [Command_Load](#command_load) (Load an arbitrary molecule/map/ligand from any available source)
 * [Command_Notification](#command_notification) (Display a message to the user)
 * [Command_Wait](#command_wait) (Pause macro execution for a set time)
-
-### Molecular complexes handling
-
-* [Command_Load](#command_load) (Load an arbitrary molecule/map/ligand from any available source)
 * [Command_Split](#command_split) (Split selected atoms into different molecular complexes)
 * [Command_Duplicate](#command_duplicate) (Duplicate selected atoms into new molecular complexes)
 * [Command_Merge](#command_merge) (Merge selected atoms into a single molecular complex)
@@ -16,9 +13,6 @@
 * [Command_Zoom](#command_zoom) (Bring selected atoms into arms-length distance in front of the user)
 * [Command_Align](#command_align) (Align molecular complexes origins and lock them into place)
 * [Command_Delete](#command_delete) (Destroy and remove molecular structures from the room)
-
-### Rendering enable/disable (of current selection)
-
 * [Command_ShowAtomsBonds](#command_showatomsbonds) (Enable/Disable rendering of atoms and bonds)
 * [Command_ShowRibbons](#command_showribbons) (Enable/Disable rendering of ribbons)
 * [Command_ShowSurfaces](#command_showsurfaces) (Enable/Disable rendering of surface)
@@ -26,33 +20,17 @@
 * [Command_ShowHydrogens](#command_showhydrogens) (Enable/Disable rendering of hydrogen atoms)
 * [Command_ShowHetAtomsBonds](#command_showhetatomsbonds) (Enable/Disable rendering of hetatoms atoms and bonds)
 * [Command_ShowHetSurfaces](#command_showhetsurfaces) (Enable/Disable rendering of hetatoms surfaces)
-
-### Rendering setup (of current selection)
-
 * [Command_SetAtomsBondsRender](#command_setatomsbondsrender) (Set the rendering mode for selected atoms and bonds)
 * [Command_SetRibbonsRender](#command_setribbonsrender) (Set the rendering mode for selected ribbons)
 * [Command_SetSurfacesTransparency](#command_setsurfacestransparency) (Set the rendering surface opacity of the selected atoms)
-
-### Rendering coloring (of current selection)
-
 * [Command_ColoringAtomsBonds](#command_coloringatomsbonds) (Set coloring of selected atoms and bonds)
 * [Command_ColoringRibbons](#command_coloringribbons) (Set coloring of selected ribbons)
 * [Command_ColoringSurfaces](#command_coloringsurfaces) (Set coloring of selected atom surfaces)
-
-### Labeling manipulation (of current selection)
-
 * [Command_ShowAtomLabels](#command_showatomlabels) (Enable/Disable rendering of selected atoms labels)
 * [Command_ShowResidueLabels](#command_showresiduelabels) (Enable/Disable rendering of selected residues labels)
-
-### Misc functions
-
 * [Command_HydrogenAdd](#command_hydrogenadd) (Schedule computing of hydrogens on selected atoms, SLOW)
 * [Command_HydrogenDelete](#command_hydrogendelete) (Schedule removing of hydrogens on selected atoms, SLOW)
-
-### Debug functions
-
 * [Command_Flush](#command_flush) (Make sure all previous commands have been executed before continuing)
-
 
 ## Documentation API
 
