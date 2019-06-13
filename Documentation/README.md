@@ -1,7 +1,35 @@
-# Summary
+# Getting started
 
+### The language
 
-# Selection fonctionality
+Nanome macros are made using the programming language Lua
+
+See: https://www.lua.org/start.html
+
+### Example
+
+A macro can be just a few lines of code
+
+```lua
+function main ()
+    Command_Notification("Hello world, my first macro!");
+end;
+```
+
+### Features
+
+Nanome provide sets of functionality divided in multiple categories:
+- [Selection manipulation](#selection) (Highlight and Focus on certains parts of the loaded entities)
+- [Command scheduling](#commands) (edit the rendering and content of the selection)
+- [Molecular manipulation](#molecular) (read and write Workspace,Complexes,Molecules,Chains,Residues,Atoms)
+- [Menus manipulation](#menus) (read, locate and move the UI menus available to the user)
+- [User manipulation](#user) (read, locate and move the User that is using the macro)
+- [Store manipulation](#store) (allow you to save/load states between macros)
+- [Network manipulation](#network) (FOR EXPERTS, allow you to fine-tune everything that the user can see)
+
+# API Documentation
+
+## Selection
 
 DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/SELECTION.md
 
@@ -34,7 +62,7 @@ Selection_GetMolecules() -> List<Molecule>
 Selection_GetComplexes() -> List<Complex>
 ```
 
-# Command fonctionality
+## Commands
 
 DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/COMMAND.md
 
@@ -82,7 +110,7 @@ Command_ColoringRibbons(string scheme, Color color1, Color color2) -> null
 Command_ColoringSurfaces(string scheme, Color color1, Color color2, bool onlyColorCarbons) -> null
 ```
 
-# Molecular functionality
+## Molecular
 
 Ability to manipulate molecular entities
 
@@ -172,7 +200,7 @@ Atom_GetLabelContent(Atom atom) -> string
 Atom_SetLabelContent(Atom atom, string value) -> null
 ```
 
-# Menu fonctionality
+## Menus
 
 Ability to manipulate the menus in the room
 
@@ -195,7 +223,7 @@ Menu_SetRotation(Menu menu, Quaternion value) -> null
 Menu_SetScale(Menu menu, Vector3 value) -> null
 ```
 
-# User fonctionality
+## User
 
 Ability to manipulate the user in the room
 
@@ -222,7 +250,7 @@ User_SetOriginPosition(User user, Vector3 value) -> null
 User_SetOriginRotation(User user, Quaternion value) -> null
 ```
 
-# Store fonctionality
+## Store
 
 DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/STORE.md
 
@@ -244,7 +272,7 @@ Store_GetInt(string key) -> int
 Store_GetBool(string key) -> bool
 ```
 
-# Basic and utility types functionality
+## Basic and utility types functionality
 
 Give access to a set of function to manipulate basic API types
 
@@ -287,7 +315,7 @@ Path_Make(string format) -> string
 Time_Now() -> float
 ```
 
-# Network functionality
+## Network
 
 DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/NETWORK.md
 
