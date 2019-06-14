@@ -1,0 +1,1 @@
+A Macro to tests if Macros are working on your Quest
