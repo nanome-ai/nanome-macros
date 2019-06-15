@@ -11,30 +11,12 @@ See: https://www.lua.org/start.html
 A macro can be just a few lines of code
 
 ```lua
-function main ()
-    Command_Notification("Hello world, my first macro!");
-end;
-```
-
-### Documenting the macro
-
-A macro can be described to users using comments int the macro file:
-
-Reminder: This is optional
-
-```lua
 --[[
- This macro will load multiple drugs automatically from drugbank:
- - Caffeine
- - Tylenol
- - Morphine
+    You can add a small description to the macro like this way
+    This is optional
 ]]
 function main ()
-    Command_Load("Caffeine", "SDF", "HTTP", "https://www.drugbank.ca/structures/small_molecule_drugs/DB00201.sdf");
-    Command_Load("Tylenol", "SDF", "HTTP", "https://www.drugbank.ca/structures/small_molecule_drugs/DB00316.sdf");
-    Command_Load("Morphine", "SDF", "HTTP", "https://www.drugbank.ca/structures/small_molecule_drugs/DB00295.sdf");
-    Selection_All();
-    Command_Zoom();
+    Command_Notification("Hello world, my first macro!");
 end;
 ```
 
