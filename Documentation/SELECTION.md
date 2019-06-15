@@ -57,7 +57,9 @@ Selection_Invert();
 ### Selection_Extend
 Definition
 ```csharp
-Selection_Extend(float distance, bool groupResidues) -> null
+Selection_Extend(float distance) -> null
+Selection_Extend(float distance, bool byResidues) -> null
+Selection_Extend(float distance, bool byResidues, bool ignoreInvisibles) -> null
 ```
 Example:
 ```lua
@@ -70,7 +72,9 @@ Selection_Extend(5.0, true);
 ### Selection_Shrink
 Definition
 ```csharp
-Selection_Shrink(float distance, bool groupResidues) -> null
+Selection_Shrink(float distance) -> null
+Selection_Shrink(float distance, bool byResidues) -> null
+Selection_Shrink(float distance, bool byResidues, bool ignoreInvisibles) -> null
 ```
 Example:
 ```lua

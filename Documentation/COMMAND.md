@@ -119,6 +119,7 @@ Command_Zoom();
 Definition
 ```csharp
 Command_Align(List<Complex> complexes) -> null
+Command_Align(List<Complex> complexes, bool lockAfterAlign) -> null
 ```
 Example:
 ```lua
@@ -351,9 +352,9 @@ Command_ColoringAtomsBonds("hydrophobicity");
 Command_ColoringAtomsBonds("secondary-structure");
 
 -- Color all selected carbons atoms as RED
-Command_ColoringAtomsBonds("mono", Color_RGB(255, 0, 0), Nil, true);
+Command_ColoringAtomsBonds("mono", Color_RGB(255, 0, 0), nil, true);
 -- Color all selected carbons by chain
-Command_ColoringAtomsBonds("chain", Nil, Nil, true);
+Command_ColoringAtomsBonds("chain", nil, nil, true);
 
 -- Color all selected atoms by rainbow from red to blue
 Command_ColoringAtomsBonds("rainbow", Color_RGB(255, 0, 0), Color_RGB(0, 0, 255));
@@ -429,9 +430,9 @@ Command_ColoringSurfaces("hydrophobicity");
 Command_ColoringSurfaces("secondary-structure");
 
 -- Color all selected carbons atoms's surfaces as RED
-Command_ColoringSurfaces("mono", Color_RGB(255, 0, 0), Nil, true);
+Command_ColoringSurfaces("mono", Color_RGB(255, 0, 0), nil, true);
 -- Color all selected carbons by chain
-Command_ColoringSurfaces("chain", Nil, Nil, true);
+Command_ColoringSurfaces("chain", nil, nil, true);
 
 -- Color all selected atoms's surfaces by rainbow from red to blue
 Command_ColoringSurfaces("rainbow", Color_RGB(255, 0, 0), Color_RGB(0, 0, 255));
