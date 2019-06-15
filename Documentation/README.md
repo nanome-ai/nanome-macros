@@ -12,8 +12,7 @@ A macro can be just a few lines of code
 
 ```lua
 --[[
-    You can add a small description to the macro like this way
-    This is optional
+    You can add a small description to the macro like this way (This is optional)
 ]]
 function main ()
     Command_Notification("Hello world, my first macro!");
