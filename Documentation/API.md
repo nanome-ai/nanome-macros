@@ -11,6 +11,7 @@ Nanome provide sets of functionality divided in multiple categories:
 - [User manipulation](#user) (read, locate and move the User that is using the macro)
 - [Store manipulation](#store) (allow you to save/load states between macros)
 - [Network manipulation](#network) (FOR EXPERTS, allow you to fine-tune everything that the user can see)
+- [Primitive types](#primitives) (The basics types functions used by the different API functions)
 
 ## Selection
 
@@ -211,6 +212,8 @@ Menu_SetLocked(Menu menu, bool value) -> null
 Menu_SetPosition(Menu menu, Vector3 value) -> null
 Menu_SetRotation(Menu menu, Quaternion value) -> null
 Menu_SetScale(Menu menu, Vector3 value) -> null
+
+Menu_SendEvent(Menu menu, string type, object payload1, object payload2, object payload3) -> null // EXPERT ONLY
 ```
 
 ## User
@@ -264,7 +267,41 @@ Store_GetInt(string key) -> int
 Store_GetBool(string key) -> bool
 ```
 
-## Basic and utility types functionality
+## Network
+
+DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/NETWORK.md
+
+EXPERT ONLY: Ability to directly edit the underlying state of the room
+
+```csharp
+Network_Root() -> NetworkNode
+
+Network_GetType(NetworkNode node) -> string
+Network_GetParent(NetworkNode node) -> NetworkNode
+Network_GetChildren(NetworkNode node) -> List<NetworkNode>
+Network_GetChildWithType(NetworkNode node, string type) -> NetworkNode
+Network_GetChildrenWithType(NetworkNode node, string type) -> List<NetworkNode>
+
+Network_HasProperty(NetworkNode node, string property) -> bool
+Network_GetPropertyBool(NetworkNode node, string property) -> bool
+Network_GetPropertyByte(NetworkNode node, string property) -> int
+Network_GetPropertyInt(NetworkNode node, string property) -> int
+Network_GetPropertyFloat(NetworkNode node, string property) -> float
+Network_GetPropertyString(NetworkNode node, string property) -> string
+Network_GetProperty(NetworkNode node, string property) -> object
+
+Network_Make(NetworkNode parent, string type, object payload) -> NetworkNode
+Network_Delete(NetworkNode node) -> null
+
+Network_SetPropertyBool(NetworkNode node, string property, bool value) -> null
+Network_SetPropertyByte(NetworkNode node, string property, int value) -> null
+Network_SetPropertyInt(NetworkNode node, string property, int value) -> null
+Network_SetPropertyFloat(NetworkNode node, string property, float value) -> null
+Network_SetPropertyString(NetworkNode node, string property, string value) -> null
+Network_SetProperty(NetworkNode node, string property, object value) -> null
+```
+
+## Primitives
 
 Give access to a set of function to manipulate basic API types
 
@@ -305,38 +342,4 @@ Path_Storage() -> string
 Path_Make(string format) -> string
 
 Time_Now() -> float
-```
-
-## Network
-
-DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/NETWORK.md
-
-EXPERT ONLY: Ability to directly edit the underlying state of the room
-
-```csharp
-Network_Root() -> NetworkNode
-
-Network_GetType(NetworkNode node) -> string
-Network_GetParent(NetworkNode node) -> NetworkNode
-Network_GetChildren(NetworkNode node) -> List<NetworkNode>
-Network_GetChildWithType(NetworkNode node, string type) -> NetworkNode
-Network_GetChildrenWithType(NetworkNode node, string type) -> List<NetworkNode>
-
-Network_HasProperty(NetworkNode node, string property) -> bool
-Network_GetPropertyBool(NetworkNode node, string property) -> bool
-Network_GetPropertyByte(NetworkNode node, string property) -> int
-Network_GetPropertyInt(NetworkNode node, string property) -> int
-Network_GetPropertyFloat(NetworkNode node, string property) -> float
-Network_GetPropertyString(NetworkNode node, string property) -> string
-Network_GetProperty(NetworkNode node, string property) -> object
-
-Network_Make(NetworkNode parent, string type, object payload) -> NetworkNode
-Network_Delete(NetworkNode node) -> null
-
-Network_SetPropertyBool(NetworkNode node, string property, bool value) -> null
-Network_SetPropertyByte(NetworkNode node, string property, int value) -> null
-Network_SetPropertyInt(NetworkNode node, string property, int value) -> null
-Network_SetPropertyFloat(NetworkNode node, string property, float value) -> null
-Network_SetPropertyString(NetworkNode node, string property, string value) -> null
-Network_SetProperty(NetworkNode node, string property, object value) -> null
 ```

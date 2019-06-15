@@ -194,7 +194,6 @@ function main ()
 
     Command_Merge();
     complexes = Workspace_GetComplexes();
-    Command_Boxes(true, complexes);
 
     step("Delete all");
 
