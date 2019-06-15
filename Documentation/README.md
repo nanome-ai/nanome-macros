@@ -19,8 +19,8 @@ function main ()
 end;
 ```
 
-### Accessing Nanome features
+### Nanome Commands
 
-A macro have access to all the Nanome capability through Lua functions
+A macro have access to all the Nanome capability through Lua functions:
 
 See: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/API.md
