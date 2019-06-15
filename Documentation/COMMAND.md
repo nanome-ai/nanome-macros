@@ -7,6 +7,7 @@
 
 ### Manipulate entities
 * [Command_Load](#command_load) (Load an arbitrary molecule/map/ligand from any available source)
+* [Command_Export](#command_export) (Export a molecular complex to an arbitrary file on the computer)
 * [Command_Split](#command_split) (Split selected atoms into different molecular complexes)
 * [Command_Duplicate](#command_duplicate) (Duplicate selected atoms into new molecular complexes)
 * [Command_Merge](#command_merge) (Merge selected atoms into a single molecular complex)
@@ -58,6 +59,19 @@ Command_Load("4HHB", "PDB", "FILE", Path_Make("{{EXECUTABLE}}/4HHB.pdb"));
 Command_Load("2FMA_FOFC", "DSN6", "FILE", Path_Make("{{DOWNLOADS}}/2fma_fofc.dsn6"));
 -- Load a SDF file from the documents folder (named: LIGANDS)
 Command_Load("LIGANDS", "SDF", "FILE", Path_Make("{{DOCUMENTS}}/LIGANDS.sdf"));
+```
+
+### Command_Export
+Definition
+```csharp
+Command_Export(Complex complex, string format, string path) -> null
+```
+Example:
+```lua
+-- Save the first complex of the workspace to "MacroOutputAsPDB" on the desktop
+Command_Export(Workspace_GetComplexes()[0], "PDB", Path_Make("{{DESKTOP}}/MacroOutputAsPDB.pdb"));
+-- Save the first complex of the workspace to "MacroOutputAsSDF" on the desktop
+Command_Export(Workspace_GetComplexes()[0], "SDF", Path_Make("{{DESKTOP}}/MacroOutputAsSDF.sdf"));
 ```
 
 ### Command_Split

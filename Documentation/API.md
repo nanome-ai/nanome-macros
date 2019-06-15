@@ -59,6 +59,7 @@ Manipulate the workspace and the selection within the workspace
 
 ```csharp
 Command_Load(string name, string type, string source, string payload) -> null
+Command_Export(Complex complex, string format, string path) -> null
 
 Command_Notification(string message) -> null
 Command_Wait(int milliseconds) -> null
