@@ -23,7 +23,7 @@ The programming language used here is Lua.
 
 See: https://www.lua.org/start.html
 
-### Nanome Commands
+### Available Commands
 
 A macro have access to all the Nanome capabilities through custom functions:
 
