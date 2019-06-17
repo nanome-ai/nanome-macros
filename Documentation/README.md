@@ -16,6 +16,7 @@ A macro can be just a few lines of code
 ]]
 function main ()
     Command_Notification("Hello world, my first macro!");
+    return "SUCCESS";
 end;
 ```
 
