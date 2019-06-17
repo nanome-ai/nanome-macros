@@ -19,7 +19,9 @@ function main ()
 end;
 ```
 
-The programming language used here is Lua. See: https://www.lua.org/start.html
+The programming language used here is Lua.
+
+See: https://www.lua.org/start.html
 
 ### Nanome Commands
 
@@ -40,4 +42,4 @@ C://Users/{{USERNAME}}/Documents/Nanome/
 C://Users/{{USERNAME}}/Documents/Nanome/Macros/
 ```
 
-Optionally, a macro can be hosted through an HTTP server
+Optionally, a macro can be hosted through an HTTP server (configurable in the config-file)
