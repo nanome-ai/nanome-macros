@@ -38,6 +38,7 @@ You can store the macros in one of the following supported folder (configurable 
 
 ```
 C://Users/{{USERNAME}}/Desktop/
+C://Users/{{USERNAME}}/Downloads/
 C://Users/{{USERNAME}}/Documents/
 C://Users/{{USERNAME}}/Documents/Nanome/
 C://Users/{{USERNAME}}/Documents/Nanome/Macros/
