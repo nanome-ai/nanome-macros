@@ -10,8 +10,9 @@ Nanome provide sets of functionality divided in multiple categories:
 - [Menus manipulation](#menus) (read, locate and move the UI menus available to the user)
 - [User manipulation](#user) (read, locate and move the User that is using the macro)
 - [Store manipulation](#store) (allow you to save/load states between macros)
-- [Network manipulation](#network) (FOR EXPERTS, allow you to fine-tune everything that the user can see)
+- [System manipulation](#system) (The basics functions to read and write files locally)
 - [Primitive types](#primitives) (The basics types functions used by the different API functions)
+- [Network manipulation](#network) (FOR EXPERTS, allow you to fine-tune everything that the user can see)
 
 ## Selection
 
@@ -116,6 +117,12 @@ Workspace_GetScale() -> Vector3
 Workspace_SetCenter(Vector3 value) -> null
 Workspace_SetScale(Vector3 value) -> null
 
+Workspace_Interpolate(Vector3 position) -> null
+Workspace_Interpolate(Vector3 position, Quaternion rotation) -> null
+Workspace_Interpolate(Vector3 position, Quaternion rotation, Vector3 scale) -> null
+Workspace_Interpolate(Vector3 position, Quaternion rotation, Vector3 scale, float time) -> null
+Workspace_Interpolate(Vector3 position, Quaternion rotation, Vector3 scale, float time, bool async) -> null
+
 Complex_GetNetwork(Complex complex) -> NetworkNode // EXPERT ONLY
 Complex_GetMolecules(Complex complex) -> List<Molecule>
 Complex_GetCurrentMolecule(Complex complex) -> Molecule
@@ -127,16 +134,6 @@ Complex_GetVisible(Complex complex) -> bool
 Complex_GetBoxed(Complex complex) -> bool
 Complex_GetLocked(Complex complex) -> bool
 
-Complex_GetAnimationFrame(Complex complex) -> int
-Complex_GetAnimationMode(Complex complex) -> int
-Complex_GetAnimationSpeed(Complex complex) -> float
-Complex_GetAnimationLooping(Complex complex) -> bool
-
-Complex_GetGlobalPosition(Complex complex) -> Vector3
-Complex_GetGlobalRotation(Complex complex) -> Quaternion
-Complex_GetLocalPosition(Complex complex) -> Vector3
-Complex_GetLocalRotation(Complex complex) -> Quaternion
-
 Complex_SetName(Complex complex, string value) -> null
 Complex_SetTagNumber(Complex complex, int value) -> null
 Complex_SetTagString(Complex complex, string value) -> null
@@ -144,15 +141,30 @@ Complex_SetVisible(Complex complex, bool value) -> null
 Complex_SetBoxed(Complex complex, bool value) -> null
 Complex_SetLocked(Complex complex, bool value) -> null
 
+Complex_GetAnimationFrame(Complex complex) -> int
+Complex_GetAnimationMode(Complex complex) -> int
+Complex_GetAnimationSpeed(Complex complex) -> float
+Complex_GetAnimationLooping(Complex complex) -> bool
+
 Complex_SetAnimationFrame(Complex complex, int value) -> null
 Complex_SetAnimationMode(Complex complex, int value) -> null
 Complex_SetAnimationSpeed(Complex complex, float value) -> null
 Complex_SetAnimationLooping(Complex complex, bool value) -> null
 
+Complex_GetGlobalPosition(Complex complex) -> Vector3
+Complex_GetGlobalRotation(Complex complex) -> Quaternion
+Complex_GetLocalPosition(Complex complex) -> Vector3
+Complex_GetLocalRotation(Complex complex) -> Quaternion
+
 Complex_SetGlobalPosition(Complex complex, Vector3 value) -> null
 Complex_SetGlobalRotation(Complex complex, Quaternion value) -> null
 Complex_SetLocalPosition(Complex complex, Vector3 value) -> null
 Complex_SetLocalRotation(Complex complex, Quaternion value) -> null
+
+Complex_Interpolate(Complex complex, Vector position) -> null
+Complex_Interpolate(Complex complex, Vector position, Quaternion rotation) -> null
+Complex_Interpolate(Complex complex, Vector position, Quaternion rotation, float time) -> null
+Complex_Interpolate(Complex complex, Vector position, Quaternion rotation, float time, bool async) -> null
 
 Molecule_GetNetwork(Molecule molecule) -> NetworkNode // EXPERT ONLY
 Molecule_GetComplex(Molecule molecule) -> Complex
@@ -268,40 +280,6 @@ Store_GetInt(string key) -> int
 Store_GetBool(string key) -> bool
 ```
 
-## Network
-
-DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/NETWORK.md
-
-EXPERT ONLY: Ability to directly edit the underlying state of the room
-
-```csharp
-Network_Root() -> NetworkNode
-
-Network_GetType(NetworkNode node) -> string
-Network_GetParent(NetworkNode node) -> NetworkNode
-Network_GetChildren(NetworkNode node) -> List<NetworkNode>
-Network_GetChildWithType(NetworkNode node, string type) -> NetworkNode
-Network_GetChildrenWithType(NetworkNode node, string type) -> List<NetworkNode>
-
-Network_HasProperty(NetworkNode node, string property) -> bool
-Network_GetPropertyBool(NetworkNode node, string property) -> bool
-Network_GetPropertyByte(NetworkNode node, string property) -> int
-Network_GetPropertyInt(NetworkNode node, string property) -> int
-Network_GetPropertyFloat(NetworkNode node, string property) -> float
-Network_GetPropertyString(NetworkNode node, string property) -> string
-Network_GetProperty(NetworkNode node, string property) -> object
-
-Network_Make(NetworkNode parent, string type, object payload) -> NetworkNode
-Network_Delete(NetworkNode node) -> null
-
-Network_SetPropertyBool(NetworkNode node, string property, bool value) -> null
-Network_SetPropertyByte(NetworkNode node, string property, int value) -> null
-Network_SetPropertyInt(NetworkNode node, string property, int value) -> null
-Network_SetPropertyFloat(NetworkNode node, string property, float value) -> null
-Network_SetPropertyString(NetworkNode node, string property, string value) -> null
-Network_SetProperty(NetworkNode node, string property, object value) -> null
-```
-
 ## Primitives
 
 Give access to a set of function to manipulate basic API types
@@ -341,18 +319,58 @@ Color_GetA(Color color) -> int
 Time_Now() -> float
 ```
 
-## FileSystem
+## System
 
-Give access to a set of function to manipulate the computer's files
+Give access to a set of function to read and write the computer's files
 
 ```csharp
 Path_Executable() -> string
 Path_Storage() -> string
 Path_Make(string format) -> string
 
-File_ReadContent(string path) -> string
-File_ReadLines(string path) -> List<string>
+Folder_Exists(string path) -> bool
+Folder_Create(string path) -> null
+Folder_Files(string path) -> List<string>
+Folder_Delete(string path) -> null
 
+File_Exists(string path) -> bool
 File_WriteContent(string path, string content) -> null
 File_WriteLines(string path, List<string> content) -> null
+File_ReadContent(string path) -> string
+File_ReadLines(string path) -> List<string>
+File_Delete(string path) -> null
+```
+
+## Network
+
+DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/NETWORK.md
+
+EXPERT ONLY: Ability to directly edit the underlying state of the room
+
+```csharp
+Network_Root() -> NetworkNode
+
+Network_GetType(NetworkNode node) -> string
+Network_GetParent(NetworkNode node) -> NetworkNode
+Network_GetChildren(NetworkNode node) -> List<NetworkNode>
+Network_GetChildWithType(NetworkNode node, string type) -> NetworkNode
+Network_GetChildrenWithType(NetworkNode node, string type) -> List<NetworkNode>
+
+Network_HasProperty(NetworkNode node, string property) -> bool
+Network_GetPropertyBool(NetworkNode node, string property) -> bool
+Network_GetPropertyByte(NetworkNode node, string property) -> int
+Network_GetPropertyInt(NetworkNode node, string property) -> int
+Network_GetPropertyFloat(NetworkNode node, string property) -> float
+Network_GetPropertyString(NetworkNode node, string property) -> string
+Network_GetProperty(NetworkNode node, string property) -> object
+
+Network_Make(NetworkNode parent, string type, object payload) -> NetworkNode
+Network_Delete(NetworkNode node) -> null
+
+Network_SetPropertyBool(NetworkNode node, string property, bool value) -> null
+Network_SetPropertyByte(NetworkNode node, string property, int value) -> null
+Network_SetPropertyInt(NetworkNode node, string property, int value) -> null
+Network_SetPropertyFloat(NetworkNode node, string property, float value) -> null
+Network_SetPropertyString(NetworkNode node, string property, string value) -> null
+Network_SetProperty(NetworkNode node, string property, object value) -> null
 ```
