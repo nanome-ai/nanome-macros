@@ -338,9 +338,21 @@ Color_GetG(Color color) -> int
 Color_GetB(Color color) -> int
 Color_GetA(Color color) -> int
 
+Time_Now() -> float
+```
+
+## FileSystem
+
+Give access to a set of function to manipulate the computer's files
+
+```csharp
 Path_Executable() -> string
 Path_Storage() -> string
 Path_Make(string format) -> string
 
-Time_Now() -> float
+File_ReadContent(string path) -> string
+File_ReadLines(string path) -> List<string>
+
+File_WriteContent(string path, string content) -> null
+File_WriteLines(string path, List<string> content) -> null
 ```

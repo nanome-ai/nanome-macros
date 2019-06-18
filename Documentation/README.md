@@ -34,7 +34,7 @@ See: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/API.md
 
 Macro can be shared simply by copy/pasting the ".lua" file on different machines.
 
-You can store the macros in one of the following supported folder (configurable in the config-file):
+You can store the macros in one of the following supported folders (configurable in the config-file):
 
 ```
 C://Users/{{USERNAME}}/Desktop/
