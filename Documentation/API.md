@@ -7,6 +7,7 @@ Nanome provide sets of functionality divided in multiple categories:
 - [Selection manipulation](#selection) (Highlight and Focus on certains parts of the loaded entities)
 - [Command scheduling](#commands) (edit the rendering and content of the selection)
 - [Molecular manipulation](#molecular) (read and write Workspace,Complexes,Molecules,Chains,Residues,Atoms)
+- [Search and find](#search) (Easily locate, search or find molecular structures, residues, atoms etc within the scene)
 - [Menus manipulation](#menus) (read, locate and move the UI menus available to the user)
 - [User manipulation](#user) (read, locate and move the User that is using the macro)
 - [Store manipulation](#store) (allow you to save/load states between macros)
@@ -202,6 +203,28 @@ Atom_GetIsHet(Atom atom) -> bool
 Atom_GetBFactor(Atom atom) -> float
 Atom_GetLabelContent(Atom atom) -> string
 Atom_SetLabelContent(Atom atom, string value) -> null
+```
+
+## Search
+
+DETAILS: https://github.com/nanome-ai/nanome-macros/blob/master/Documentation/SEARCH.md
+
+Ability to find and locate specific data within the workspaces
+
+```csharp
+Search_GetComplexes(string pattern) -> List<Complex>
+Search_GetMolecules(string pattern) -> List<Molecule>
+Search_GetChains(string pattern) -> List<Chain>
+Search_GetResidues(string pattern) -> List<Residue>
+Search_GetAtoms(string pattern) -> List<Atom>
+```
+
+Examples:
+```lua
+complexes = Search_GetComplexes("4HHB");
+chains = Search_GetChains("4HHB > A");
+residues = Search_GetResidues("4HHB > A > CYS");
+atoms = Search_GetAtoms("4HHB > HA > HOH > O");
 ```
 
 ## Menus
