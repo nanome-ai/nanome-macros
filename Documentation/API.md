@@ -235,19 +235,29 @@ Ability to manipulate the menus in the room
 Menu_FindByName(string name) -> Menu
 Menu_FindAll() -> List<Menu>
 
+Menu_MakeImageFile(string title, string path) -> Menu
+Menu_MakeImageHttp(string title, string url) -> Menu
+
+Menu_MakePdfFile(string title, string path) -> Menu
+Menu_MakePdfHttp(string title, string url) -> Menu
+
 Menu_GetNetwork(Menu menu) -> NetworkNode // EXPERT ONLY
 Menu_GetName(Menu menu) -> string
 Menu_GetVisible(Menu menu) -> bool
 Menu_GetLocked(Menu menu) -> bool
 Menu_GetPosition(Menu menu) -> Vector3
 Menu_GetRotation(Menu menu) -> Quaternion
-Menu_GetScale(Menu menu) -> Vector3
+Menu_GetScale(Menu menu) -> float
 
 Menu_SetVisible(Menu menu, bool value) -> null
 Menu_SetLocked(Menu menu, bool value) -> null
 Menu_SetPosition(Menu menu, Vector3 value) -> null
 Menu_SetRotation(Menu menu, Quaternion value) -> null
-Menu_SetScale(Menu menu, Vector3 value) -> null
+Menu_SetScale(Menu menu, float value) -> null
+
+Menu_DoPop(Menu menu) -> null
+Menu_DoFixed(Menu menu) -> null
+Menu_Delete(Menu menu) -> null
 
 Menu_SendEvent(Menu menu, string type, object payload1, object payload2, object payload3) -> null // EXPERT ONLY
 ```
