@@ -113,10 +113,10 @@ Workspace_GetNetwork() -> NetworkNode // EXPERT ONLY
 Workspace_GetComplexes() -> List<Complex>
 
 Workspace_GetCenter() -> Vector3
-Workspace_GetScale() -> Vector3
+Workspace_GetScale() -> Float
 
 Workspace_SetCenter(Vector3 value) -> null
-Workspace_SetScale(Vector3 value) -> null
+Workspace_SetScale(Float value) -> null
 
 Workspace_Interpolate(Vector3 position) -> null
 Workspace_Interpolate(Vector3 position, Quaternion rotation) -> null
