@@ -2,7 +2,7 @@
 # Available functions: Command
 
 ### Utility functions
-* [Command_Notification](#command_notification) (Display a message to the user)
+* [Command_Notification](#command_notification) (Display a message to the user, limit: 80 characters)
 * [Command_Wait](#command_wait) (Pause macro execution for a set time)
 
 ### Manipulate entities
