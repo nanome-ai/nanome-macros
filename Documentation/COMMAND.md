@@ -59,6 +59,8 @@ Command_Load("4HHB", "PDB", "FILE", Path_Make("{{EXECUTABLE}}/4HHB.pdb"));
 Command_Load("2FMA_FOFC", "DSN6", "FILE", Path_Make("{{DOWNLOADS}}/2fma_fofc.dsn6"));
 -- Load a SDF file from the documents folder (named: LIGANDS)
 Command_Load("LIGANDS", "SDF", "FILE", Path_Make("{{DOCUMENTS}}/LIGANDS.sdf"));
+-- Load a Nanome workspace file from the documents folder (named savedWorkspace)
+Command_Load("savedWorkspace", "NANOME", "FILE", Path_Make("{{DOCUMENTS}}/nanome/Sessions/savedWorkspace.nanome"));
 ```
 
 ### Command_Export
