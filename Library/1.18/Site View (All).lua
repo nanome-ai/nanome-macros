@@ -31,7 +31,6 @@ function main ()
 
     Selection_Clear();
     Selection_All();
-
     Command_HbondDelete();
 
     Command_ShowAtomsBonds(false);
@@ -51,22 +50,22 @@ function main ()
     Command_ColoringSurfaces("hydrophobicity");
 
     Selection_Change("replace", ligandResidues);
-
     Command_HbondAdd();
 
     Selection_Extend(5.0, true);
-
     Command_ShowAtomsBonds(true);
     Command_ShowRibbons(true);
     Command_ShowSurfaces(true);
     Command_ShowWaters(true);
     Command_ShowHydrogens(true);
     Command_ShowHetAtomsBonds(true);
-    Command_ShowResidueLabels(true);
     Command_SetAtomsBondsRender("wire");
 
-    Selection_Change("filter", ligandResidues);
+    Selection_Change("remove", Search_GetResidues(">> HOH"));
+    Command_ShowResidueLabels(true);
+    
 
+    Selection_Change("filter", ligandResidues);
     Command_SetAtomsBondsRender("sticks");
     Command_ColoringAtomsBonds("default");
 
