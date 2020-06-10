@@ -60,6 +60,12 @@ function main ()
     Command_ColoringRibbons("chains");
     Command_ColoringSurfaces("hydrophobicity");
 
+    Selection_Change("replace", ligandResidues);
+
+	Command_ShowAtomsBonds(true);
+	Command_ShowHetAtomsBonds(true);
+    Command_SetAtomsBondsRender("sticks");
+    
     Selection_Change("replace", ligandResidue);
 
     Command_HbondAdd();
