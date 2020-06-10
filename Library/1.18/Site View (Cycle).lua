@@ -42,6 +42,7 @@ function main ()
     Selection_All();
 
     Command_HbondDelete();
+    Command_ClashDelete();
 
     Command_ShowAtomsBonds(false);
     Command_ShowRibbons(true);
@@ -62,6 +63,7 @@ function main ()
     Selection_Change("replace", ligandResidue);
 
     Command_HbondAdd();
+    Command_ClashAdd();
 
     Selection_Extend(5.0, true);
 
@@ -71,8 +73,9 @@ function main ()
     Command_ShowWaters(true);
     Command_ShowHydrogens(true);
     Command_ShowHetAtomsBonds(true);
-    Command_ShowResidueLabels(true);
     Command_SetAtomsBondsRender("wire");
+    Selection_Change("remove", Search_GetResidues(">> HOH"));
+    Command_ShowResidueLabels(true);
 
     Selection_Change("filter", ligandResidue);
 
