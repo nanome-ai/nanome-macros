@@ -13,7 +13,7 @@
 --  change the color schema of the ligand frame to something else (carbonite)
 --  switch to medchem toolkit
 
-function prep_ligand ()
+function edit_ligand ()
 	
   -- -- save the current selected atoms
   selectedLigand = Selection_GetResidues();
@@ -80,6 +80,6 @@ function main ()
   if List_Length(selectedComplexes) <= 0 then
       return "Error: No Structure Selected";
   end;
-  prep_ligand();
+  edit_ligand();
   return "Success: Ligand Ready AF";
 end;
