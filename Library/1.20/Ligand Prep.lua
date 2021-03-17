@@ -71,7 +71,7 @@ function prep_ligand ()
   Complex_SetVisible(ogLigand, false);
   Command_Wait(100);
 
-  Command_ColoringAtomsBonds("mono", Color_RGB(255, 0, 0), nil, true);
+  Command_ColoringAtomsBonds("mono", Color_RGB(19, 25, 25), nil, true);
 end;
 
 
