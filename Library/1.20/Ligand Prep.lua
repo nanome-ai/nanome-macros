@@ -54,7 +54,7 @@ function prep_ligand ()
 
   newLigand = Selection_GetComplexes()[0];
   Complex_SetName(newLigand, "L_Edit " .. currentComplexName);
-  Command_SetAtomsBondsRender("wire");
+  Command_SetAtomsBondsRender("sticks");
   Command_Wait(100);
 
   -- Align them all
