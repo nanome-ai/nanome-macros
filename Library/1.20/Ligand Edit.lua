@@ -70,8 +70,8 @@ function edit_ligand ()
   -- Hide OG ligand and color edit by carbonite
   Complex_SetVisible(ogLigand, false);
   Command_Wait(100);
-
-  Command_ColoringAtomsBonds("mono", Color_RGB(19, 25, 25), nil, true);
+  
+  Command_ColoringAtomsBonds("mono", Color_RGB(219, 125, 225), nil, true);
 end;
 
 
