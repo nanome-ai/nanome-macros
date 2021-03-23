@@ -85,6 +85,7 @@ function main ()
 
     Selection_Change("filter", ligandResidue);
 
+    Command_ShowResidueLabels(false);
     Command_SetAtomsBondsRender("sticks");
     Command_ColoringAtomsBonds("default");
 
