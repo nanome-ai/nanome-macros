@@ -13,7 +13,7 @@
 --  change the color schema of the ligand frame to something else (carbonite)
 --  switch to medchem toolkit
 
-function prep_ligand ()
+function edit_ligand ()
 	
   -- -- save the current selected atoms
   selectedLigand = Selection_GetResidues();
@@ -54,7 +54,7 @@ function prep_ligand ()
 
   newLigand = Selection_GetComplexes()[0];
   Complex_SetName(newLigand, "L_Edit " .. currentComplexName);
-  Command_SetAtomsBondsRender("wire");
+  Command_SetAtomsBondsRender("sticks");
   Command_Wait(100);
 
   -- Align them all
@@ -70,8 +70,8 @@ function prep_ligand ()
   -- Hide OG ligand and color edit by carbonite
   Complex_SetVisible(ogLigand, false);
   Command_Wait(100);
-
-  Command_ColoringAtomsBonds("mono", Color_RGB(255, 0, 0), nil, true);
+  
+  Command_ColoringAtomsBonds("mono", Color_RGB(219, 125, 225), nil, true);
 end;
 
 
@@ -80,6 +80,6 @@ function main ()
   if List_Length(selectedComplexes) <= 0 then
       return "Error: No Structure Selected";
   end;
-  prep_ligand();
+  edit_ligand();
   return "Success: Ligand Ready AF";
 end;
