@@ -81,5 +81,5 @@ function main ()
       return "Error: No Structure Selected";
   end;
   prep_ligand();
-  return "Success: Ligand Ready AF";
+  return "Success: Ligand Ready";
 end;
